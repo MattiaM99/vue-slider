@@ -31,7 +31,11 @@ const app = new Vue({
     counter: 0,
 
   },
-  
+
+  mounted(){
+    setInterval(this.nextSlide, 3000);
+  },
+
   methods:{
     nextSlide(){
       this.counter++;
