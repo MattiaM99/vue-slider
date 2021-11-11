@@ -56,10 +56,6 @@
 .thumb{
   height: calc(100% / 5);
   opacity: .5;
-  
-
-  /* soluzione senza object-fit */
-  /* overflow: hidden; */
 }
 
 .thumb.active {

@@ -6,29 +6,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
 <body>
-  <div class="container">
+  <div class="container" id="app">
     <div class="slider">
       <div class="items">
         <div class="item active">
-          <img src="img/01.jpg" alt="">
+          <img :src="images[counter]" alt="">
             <div class="text">
-              <h2>Lorem 1</h2>
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae iure exercitationem doloribus est dicta quidem laborum nemo suscipit magni itaque repellendus, quas enim officia tempore porro, recusandae aliquid. Maiores, laudantium.</p>
+              <h2> {{title[counter]}} </h2>
+              <p> {{text[counter]}} </p>
             </div>
           </div>
         </div>
         <div class="thumbs">
-          <div class="prev"> &uarr; </div>
-          <div class="next"> &darr; </div>
-          <div class="thumb active">
-            <img src="img/01.jpg" alt="">
+          <div @click="prevSlide" class="prev"> &uarr; </div>
+          <div @click="nextSlide" class="next"> &darr; </div>
+          <div class="thumb"  v-for="image in images">
+            <img :src="image" alt="">
           </div>
         </div>
     </div>
 </div>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>
